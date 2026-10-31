@@ -1,0 +1,302 @@
+/* CineScope — Pastel Cinematic Design System */
+:root {
+  /* Pastel Palette */
+  --c-cream-bg: #FAF7F2;
+  --c-cream-card: #FFFFFF;
+  --c-cream-soft: #F5EFEB;
+  --c-cream-border: #EFE8DE;
+
+  --c-lavender-light: #F4F0FD;
+  --c-lavender: #E8E0F8;
+  --c-lavender-accent: #8C7AB6;
+  --c-lavender-deep: #5E4E85;
+
+  --c-blush-light: #FFF2F6;
+  --c-blush: #FAD2E1;
+  --c-blush-accent: #D9779F;
+  --c-blush-deep: #963D62;
+
+  --c-sage-light: #EEF6F4;
+  --c-sage: #C5DBD6;
+  --c-sage-accent: #4E756C;
+  --c-sage-deep: #325049;
+
+  --c-peach-light: #FFF6F0;
+  --c-peach: #FDE2D1;
+  --c-peach-accent: #C97D5D;
+
+  /* Typography Colors */
+  --c-text-primary: #282133;
+  --c-text-secondary: #584D67;
+  --c-text-muted: #887B98;
+  --c-text-light: #A79CB5;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-handwritten: 'Caveat', cursive, serif;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(94, 78, 133, 0.06);
+  --shadow-md: 0 8px 24px -4px rgba(94, 78, 133, 0.08), 0 2px 6px -1px rgba(217, 119, 159, 0.05);
+  --shadow-lg: 0 16px 36px -6px rgba(94, 78, 133, 0.12), 0 6px 16px -2px rgba(217, 119, 159, 0.08);
+  --shadow-hover: 0 20px 42px -6px rgba(140, 122, 182, 0.22), 0 8px 20px -2px rgba(217, 119, 159, 0.14);
+
+  /* Radius */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--c-text-primary);
+  background-color: var(--c-cream-bg);
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(232, 224, 248, 0.45) 0%, transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(250, 210, 225, 0.45) 0%, transparent 35%),
+    radial-gradient(circle at 50% 60%, rgba(197, 219, 214, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 85%, rgba(253, 226, 209, 0.4) 0%, transparent 40%);
+  background-attachment: fixed;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Typography Base */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--c-text-primary);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+p {
+  color: var(--c-text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+input {
+  font-family: var(--font-body);
+  outline: none;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Glassmorphism / Pastel surfaces */
+.pastel-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+}
+
+.pastel-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Badges & Pills */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all var(--transition-fast);
+}
+
+.badge-lavender {
+  background-color: var(--c-lavender);
+  color: var(--c-lavender-deep);
+  border: 1px solid rgba(140, 122, 182, 0.25);
+}
+
+.badge-blush {
+  background-color: var(--c-blush);
+  color: var(--c-blush-deep);
+  border: 1px solid rgba(217, 119, 159, 0.25);
+}
+
+.badge-sage {
+  background-color: var(--c-sage);
+  color: var(--c-sage-deep);
+  border: 1px solid rgba(78, 117, 108, 0.25);
+}
+
+.badge-peach {
+  background-color: var(--c-peach);
+  color: var(--c-peach-accent);
+  border: 1px solid rgba(201, 125, 93, 0.25);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #E8E0F8 0%, #FAD2E1 100%);
+  color: var(--c-text-primary);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -3px rgba(217, 119, 159, 0.25);
+  background: linear-gradient(135deg, #DDD2F3 0%, #F8C3D7 100%);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--c-text-primary);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--c-cream-border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #FFFFFF;
+  border-color: var(--c-lavender);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Stamped rating pill */
+.rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--c-text-primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Journal hand-drawn sticker touch */
+.journal-sticker {
+  font-family: var(--font-handwritten);
+  font-size: 1.15rem;
+  color: var(--c-blush-deep);
+  transform: rotate(-3deg);
+  display: inline-block;
+}
+
+/* Cute scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-cream-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-lavender);
+  border-radius: 999px;
+  border: 2px solid var(--c-cream-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--c-lavender-accent);
+}
+
+/* Animations */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+.anim-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+.anim-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}

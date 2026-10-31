@@ -1,0 +1,68 @@
+/* CineScope App Layout Styles */
+.cinescope-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Search Results Section */
+.search-results-section {
+  padding: 2.5rem 0 3.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px dashed var(--c-cream-border);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.search-results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.results-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.results-heading {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--c-text-primary);
+}
+
+.clear-search-pill {
+  font-size: 0.85rem;
+  padding: 0.45rem 1rem;
+}
+
+.no-search-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #FFF;
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--c-cream-border);
+}
+
+.no-results-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  color: var(--c-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.no-results-sub {
+  font-size: 0.95rem;
+  color: var(--c-text-muted);
+}
+
+.search-grid {
+  margin-top: 1rem;
+}

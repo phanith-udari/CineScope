@@ -1,0 +1,61 @@
+.cine-error-card {
+  background: #FFFFFF;
+  border: 1.5px dashed var(--c-blush);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 540px;
+  margin: 2rem auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.error-icon-bubble {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--c-blush-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  color: var(--c-blush-accent);
+}
+
+.error-heading {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--c-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.error-message {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--c-text-secondary);
+  margin-bottom: 1.8rem;
+  max-width: 420px;
+}
+
+.error-retry-btn {
+  margin-bottom: 1rem;
+}
+
+.error-hint-box {
+  margin-top: 1rem;
+  background: var(--c-cream-bg);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-cream-border);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.hint-pill {
+  font-weight: 700;
+  color: var(--c-lavender-deep);
+}

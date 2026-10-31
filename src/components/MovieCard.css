@@ -1,0 +1,256 @@
+.movie-card-item {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--c-cream-border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.movie-card-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(217, 119, 159, 0.4);
+}
+
+/* Palette variations */
+.movie-card-item.card-lavender:hover {
+  border-color: var(--c-lavender-accent);
+}
+
+.movie-card-item.card-blush:hover {
+  border-color: var(--c-blush-accent);
+}
+
+.movie-card-item.card-sage:hover {
+  border-color: var(--c-sage-accent);
+}
+
+/* Media Poster Frame */
+.card-media-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 2.85;
+  overflow: hidden;
+  background: var(--c-cream-soft);
+}
+
+.card-poster-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.movie-card-item:hover .card-poster-img {
+  transform: scale(1.06);
+}
+
+/* Overlays */
+.card-top-overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.card-bookmark-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-fast);
+}
+
+.card-bookmark-btn:hover {
+  transform: scale(1.12);
+  background: #FFF;
+}
+
+.card-bookmark-btn.active {
+  background: #FFF0F5;
+  border-color: var(--c-blush);
+  box-shadow: 0 4px 12px rgba(217, 119, 159, 0.3);
+}
+
+.card-editorial-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(40, 33, 51, 0.85);
+  backdrop-filter: blur(8px);
+  color: #FFF;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Quick View on Hover */
+.card-hover-action {
+  position: absolute;
+  inset: 0;
+  background: rgba(40, 33, 51, 0.25);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+  z-index: 3;
+}
+
+.movie-card-item:hover .card-hover-action {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.quick-view-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #FFFFFF;
+  color: var(--c-text-primary);
+  font-weight: 700;
+  font-size: 0.82rem;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(10px);
+  transition: all var(--transition-fast);
+}
+
+.movie-card-item:hover .quick-view-action {
+  transform: translateY(0);
+}
+
+.quick-view-action:hover {
+  background: var(--c-lavender);
+  color: var(--c-lavender-deep);
+}
+
+/* Body */
+.card-body {
+  padding: 1.15rem 1.1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-meta-line {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.76rem;
+  color: var(--c-text-muted);
+  margin-bottom: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.meta-icon {
+  margin-right: 0.15rem;
+}
+
+.meta-dot {
+  opacity: 0.5;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--c-text-primary);
+  line-height: 1.25;
+  margin-bottom: 0.45rem;
+}
+
+.card-journal-snip {
+  font-family: var(--font-handwritten);
+  font-size: 1.05rem;
+  color: var(--c-text-secondary);
+  line-height: 1.35;
+  margin-bottom: 0.85rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Gem Style extra note */
+.card-gem-style {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF7F2 100%);
+  border-color: rgba(232, 224, 248, 0.8);
+}
+
+.gem-reason-box {
+  background: var(--c-sage-light);
+  border-left: 3px solid var(--c-sage-accent);
+  padding: 0.5rem 0.7rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-bottom: 0.85rem;
+}
+
+.gem-reason-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--c-sage-deep);
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.gem-reason-text {
+  font-size: 0.78rem;
+  color: var(--c-sage-deep);
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Genres */
+.card-genres {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.genre-pill {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--c-text-secondary);
+  background: var(--c-cream-soft);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--c-cream-border);
+}
+
+.mood-pill {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--c-lavender-deep);
+  background: var(--c-lavender-light);
+  border: 1px solid var(--c-lavender);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-pill);
+}
