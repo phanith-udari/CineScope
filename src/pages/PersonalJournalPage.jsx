@@ -210,7 +210,7 @@ export const PersonalJournalPage = ({
       return;
     }
     if (personalRating < 1 || personalRating > 10) {
-      setFormError('Please provide a personal rating between 1 and 10.');
+      setFormError('Please provide a rating between 1 and 10.');
       return;
     }
 
